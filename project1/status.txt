@@ -1,0 +1,73 @@
+Compilation Steps:
+
+---------------------------------part1----------------------
+make assign1part1
+./assign1part1 part1sequence
+
+---------------------------------part2---------------------
+make assign1part2
+./assign1part2 part2sequence
+
+--------------------------------part3----------------------
+make assign1part3
+./assign1part3 [frame/pagesize] [sizeOfVirtualMem] [sizeOfPhysicalMem] [sequenceFile]
+
+--------------------clean .o files------------------------
+make clean
+
+
+
+
+Part 1:
+I have completed part1 and could successfully run the program and generate the corresponding physical addresses. 
+The output(physical addresses) for the given part1sequence file is there in output-part1 file.
+
+md5sum of output-part1test.txt file when "part1testsequence" used is b2fc5ab6d1b4082b3c205ece5f73a075
+-------------------------------------------------------------------
+Anushas-MacBook-Pro:assign1 anusha$ md5 output-part1.txt
+MD5 (output-part1.txt) = b2fc5ab6d1b4082b3c205ece5f73a075
+-------------------------------------------------------------------
+
+
+md5sum of output-part1 file when "part1sequence" used is efaf7fa73d77fd261a3fdfd553f47996
+--------------------------------------------------------------------
+anushas-MacBook-Pro:assign1 anusha$ md5 output-part1test.txt 
+MD5 (output-part1.txt) = efaf7fa73d77fd261a3fdfd553f47996
+--------------------------------------------------------------------
+
+Part 2:
+1) I have successlyfully completed part2 as well. 
+2) Implemented LRU page replacement algorithm using Queue which is again implemented using a double linked list.
+3) Total number of frames -  which doesnot include the frame required for OS is equal to the length of Queue.
+4) Most recently used page at front end and least recently used page at rear end.
+5) All the conditions given for this part are implemented correctly.
+6) The corresponding physical addresses for the given sequence file for part2 are redirected to "output-part2".
+7)Number of Page Faults are printed directly on output console.
+
+Number of page faults for part2sequence file is : 3203
+
+md5sum of output-part2 file is cc792bb4c8aaaee92baeb7e7d210efe3
+-------------------------------------------------------------------
+Anushas-MacBook-Pro:assign1 anusha$ md5 output-part2
+MD5 (output-part2) = cc792bb4c8aaaee92baeb7e7d210efe3
+-------------------------------------------------------------------
+
+Part 3:
+1) I am able to complete part3 by designing a system that is adaptive to any situation of different parameters.
+2) Successfully able to get the correct number of pagefaults for any given page and memory sizes.
+3) In the first 2 parts, I have directly declared macros for the page size, virtual memory, physical memory sizes. While for the third part they are passed as command line arguments.
+4) Implemented LRU page replacement algorithm using Queue of size (#physicalframes-1 for OS) which is again implemented using a double linked list.
+5) Most recently used page at front end and least recently used page at rear end.
+6) When I tested part3 with page/frame size of 128bytes, virtual memory of 4096bytes, physical memory of 1024 bytes, it is giving same output as of part2.
+
+execute the below commands:
+make assign1part3
+./assign1part3 128 4096 1024 part2sequence
+
+Number of page faults for part2sequence file is : 3203
+
+md5sum of output-part3 file is cc792bb4c8aaaee92baeb7e7d210efe3
+-------------------------------------------------------------------
+Anushas-MacBook-Pro:assign1 anusha$ md5 output-part2
+MD5 (output-part2) = cc792bb4c8aaaee92baeb7e7d210efe3
+-------------------------------------------------------------------
